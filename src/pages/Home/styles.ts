@@ -11,13 +11,22 @@ export const Container = styled.div`
 export const MainContent = styled.main`
   height: 20rem;
   width: 31.25rem;
-  display: flex;
+
+  @media (max-width: 550px) {
+    height: 35rem;
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
+  width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
 `;
