@@ -33,7 +33,7 @@ const Palindrome = () => {
 
   const handleFetchPalindromes = async () => {
     const response = await api.get(
-      `http://localhost:3000/palindromicNumbers/list/${start}/${end}`
+      `${import.meta.env.VITE_API_URL}/palindromicNumbers/list/${start}/${end}`
     );
 
     setPalindromes(response.data);

@@ -74,7 +74,7 @@ const Garage = () => {
     }
 
     const response = await api.post(
-      "http://localhost:3000/garage/create",
+      `${import.meta.env.VITE_API_URL}/garage/create`,
       dataRequest
     );
 

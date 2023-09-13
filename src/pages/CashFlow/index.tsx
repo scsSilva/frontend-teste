@@ -39,7 +39,9 @@ const CashFlow = () => {
 
   const handleCalculateCash = async () => {
     const response = await api.get(
-      `http://localhost:3000/cashFlow/change/${price}/${amountReceived}`
+      `${
+        import.meta.env.VITE_API_URL
+      }/cashFlow/change/${price}/${amountReceived}`
     );
 
     setChange(response.data);
