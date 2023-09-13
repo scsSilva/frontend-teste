@@ -49,7 +49,7 @@ const CashFlow = () => {
   return (
     <Styles.Container>
       <div>
-        <Styles.Title>Cash Flow</Styles.Title>
+        <Styles.Title>Calcular troco</Styles.Title>
       </div>
 
       {change != null ? (
