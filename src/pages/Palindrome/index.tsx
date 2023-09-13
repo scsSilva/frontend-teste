@@ -81,11 +81,7 @@ const Palindrome = () => {
               pattern="^[1-9]\d*$"
               {...register("end", { valueAsNumber: true })}
             />
-            <Button
-              text="Buscar"
-              disabled={isSubmitDisabled}
-              onClick={() => {}}
-            />
+            <Button text="Buscar" disabled={isSubmitDisabled} />
           </FormProvider>
         </Styles.Form>
       )}
