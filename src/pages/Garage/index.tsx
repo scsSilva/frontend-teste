@@ -9,9 +9,21 @@ import Button from "../../components/Button";
 
 const garageFormValidationSchema = zod.object({
   model: zod.string(),
-  year: zod.number(),
+  year: zod.number().refine(
+    (value) => {
+      const yearString = value.toString();
+      return yearString.length === 4 && !isNaN(value);
+    },
+    {
+      message: "Ano deve possui exatamente 4 dígitos",
+    }
+  ),
   brand: zod.string(),
-  ports: zod.number().optional(),
+  ports: zod
+    .number()
+    .min(2, "O carro deve ter, no mínimo, 2 portas")
+    .max(4, "O carro deve ter, no máximo, 4 portas")
+    .optional(),
 });
 
 type GarageFormData = zod.infer<typeof garageFormValidationSchema>;
@@ -23,7 +35,13 @@ const Garage = () => {
     resolver: zodResolver(garageFormValidationSchema),
   });
 
-  const { handleSubmit, watch, reset, register } = garageForm;
+  const {
+    handleSubmit,
+    watch,
+    reset,
+    register,
+    formState: { errors },
+  } = garageForm;
 
   const model = watch("model");
   const year = watch("year");
@@ -91,23 +109,32 @@ const Garage = () => {
             type="text"
             {...register("model")}
           />
+          <span>{errors.model?.message}</span>
+
           <Input
             placeholder="Informe o ano"
             type="number"
             pattern="/^\d{4}$/"
             {...register("year", { valueAsNumber: true })}
           />
+          <span>{errors.year?.message}</span>
+
           <Input
             placeholder="Informe a marca"
             type="text"
             {...register("brand")}
           />
+          <span>{errors.brand?.message}</span>
+
           {type === "CARRO" && (
-            <Input
-              placeholder="Informe a quantidade de portas"
-              type="number"
-              {...register("ports", { valueAsNumber: true })}
-            />
+            <>
+              <Input
+                placeholder="Informe a quantidade de portas"
+                type="number"
+                {...register("ports", { valueAsNumber: true })}
+              />
+              <span>{errors.ports?.message}</span>
+            </>
           )}
           <Button text="Guardar informações" disabled={isSubmitDisabled} />
         </FormProvider>
