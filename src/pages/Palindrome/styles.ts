@@ -15,6 +15,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     justify-self: flex-start;
+
+    @media (max-width: 450px) {
+      margin-bottom: 3rem;
+    }
   }
 `;
 
