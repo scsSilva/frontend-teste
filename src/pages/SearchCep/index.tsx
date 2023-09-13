@@ -9,11 +9,11 @@ import Button from "../../components/Button";
 import BadgeCep from "./components/BadgeCep";
 
 const searchCepFormValidationSchema = zod.object({
-  firstCep: zod.number().min(8),
-  secondCep: zod.number().min(8),
-  thirdCep: zod.number().min(8),
-  fourthCep: zod.number().min(8),
-  fifthCep: zod.number().min(8),
+  firstCep: zod.number().min(8, "CEP inválido!"),
+  secondCep: zod.number().min(8, "CEP inválido!"),
+  thirdCep: zod.number().min(8, "CEP inválido!"),
+  fourthCep: zod.number().min(8, "CEP inválido!"),
+  fifthCep: zod.number().min(8, "CEP inválido!"),
 });
 
 type SearchCepFormData = zod.infer<typeof searchCepFormValidationSchema>;
@@ -44,20 +44,20 @@ const SearchCep = () => {
     resolver: zodResolver(searchCepFormValidationSchema),
   });
 
-  const { handleSubmit, watch, reset, register } = searchCepForm;
+  const {
+    handleSubmit,
+    watch,
+    reset,
+    register,
+    formState: { errors },
+  } = searchCepForm;
 
   const firstCep = watch("firstCep");
   const secondCep = watch("secondCep");
   const thirdCep = watch("thirdCep");
   const fourthCep = watch("fourthCep");
   const fifthCep = watch("fifthCep");
-  const isSubmitDisabled = !(
-    firstCep &&
-    secondCep &&
-    thirdCep &&
-    fourthCep &&
-    fifthCep
-  );
+  const isSubmitDisabled = false;
 
   const handleSearchAddress = async () => {
     Promise.all([
@@ -109,30 +109,40 @@ const SearchCep = () => {
               step={1}
               {...register("firstCep", { valueAsNumber: true })}
             />
+            <span>{errors.firstCep?.message}</span>
+
             <Input
               placeholder="Segundo CEP (apenas números)"
               type="number"
               step={1}
               {...register("secondCep", { valueAsNumber: true })}
             />
+            <span>{errors.secondCep?.message}</span>
+
             <Input
               placeholder="Terceiro CEP (apenas números)"
               type="number"
               step={1}
               {...register("thirdCep", { valueAsNumber: true })}
             />
+            <span>{errors.thirdCep?.message}</span>
+
             <Input
               placeholder="Quarto CEP (apenas números)"
               type="number"
               step={1}
               {...register("fourthCep", { valueAsNumber: true })}
             />
+            <span>{errors.fourthCep?.message}</span>
+
             <Input
               placeholder="Quinto CEP (apenas números)"
               type="number"
               step={1}
               {...register("fifthCep", { valueAsNumber: true })}
             />
+            <span>{errors.fifthCep?.message}</span>
+
             <Button text="Consultar" disabled={isSubmitDisabled} />
           </FormProvider>
         </Styles.Form>

@@ -33,6 +33,11 @@ export const Form = styled.form`
 
   @media (max-width: 450px) {
     width: 20rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 600px) {
+    margin-top: 3rem;
   }
 `;
 
