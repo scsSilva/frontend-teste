@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button`
   width: 15rem;
   height: 7.5rem;
-  background: ${(props) => props.theme.foreground};
-  border: 1px solid ${(props) => props.theme.border};
+  background: ${(props) => props.theme.gray};
+  border: 1px solid ${(props) => props.theme.white};
   border-radius: 10px;
   padding: 10px;
   display: flex;

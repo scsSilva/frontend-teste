@@ -1,5 +1,5 @@
 export const defaultTheme = {
-  background: "#6c5ce7",
-  foreground: "#b2bec3",
-  border: "#dfe6e9",
+  purple: "#6c5ce7",
+  gray: "#b2bec3",
+  white: "#dfe6e9",
 };
