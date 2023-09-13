@@ -52,6 +52,10 @@ export const ContentData = styled.main`
   @media (max-width: 450px) {
     width: 20rem;
   }
+
+  @media (min-width: 600px) {
+    margin-top: 3rem;
+  }
 `;
 
 export const ListData = styled.ul`
