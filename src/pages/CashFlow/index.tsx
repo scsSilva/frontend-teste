@@ -87,11 +87,7 @@ const CashFlow = () => {
               pattern="/^\d+$/"
               {...register("amountReceived", { valueAsNumber: true })}
             />
-            <Button
-              text="Calcular"
-              disabled={isSubmitDisabled}
-              onClick={() => {}}
-            />
+            <Button text="Calcular" disabled={isSubmitDisabled} />
           </FormProvider>
         </Styles.Form>
       )}
