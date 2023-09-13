@@ -4,6 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import SearchCep from "./pages/SearchCep";
 import CashFlow from "./pages/CashFlow";
 import Palindrome from "./pages/Palindrome";
+import Garage from "./pages/Garage";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
         <Route path="/services/cep" element={<SearchCep />} />
         <Route path="/services/cashFlow" element={<CashFlow />} />
         <Route path="/services/palindrome" element={<Palindrome />} />
+        <Route path="/services/garage" element={<Garage />} />
       </Route>
     </Routes>
   );
