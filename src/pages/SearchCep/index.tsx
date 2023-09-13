@@ -9,11 +9,51 @@ import Button from "../../components/Button";
 import BadgeCep from "./components/BadgeCep";
 
 const searchCepFormValidationSchema = zod.object({
-  firstCep: zod.number().min(8, "CEP inválido!"),
-  secondCep: zod.number().min(8, "CEP inválido!"),
-  thirdCep: zod.number().min(8, "CEP inválido!"),
-  fourthCep: zod.number().min(8, "CEP inválido!"),
-  fifthCep: zod.number().min(8, "CEP inválido!"),
+  firstCep: zod.number().refine(
+    (cep) => {
+      const cepString = cep.toString();
+      return cepString.length === 8 && !isNaN(cep);
+    },
+    {
+      message: "CEP deve ter exatamente 8 dígitos!",
+    }
+  ),
+  secondCep: zod.number().refine(
+    (cep) => {
+      const cepString = cep.toString();
+      return cepString.length === 8 && !isNaN(cep);
+    },
+    {
+      message: "CEP deve ter exatamente 8 dígitos!",
+    }
+  ),
+  thirdCep: zod.number().refine(
+    (cep) => {
+      const cepString = cep.toString();
+      return cepString.length === 8 && !isNaN(cep);
+    },
+    {
+      message: "CEP deve ter exatamente 8 dígitos!",
+    }
+  ),
+  fourthCep: zod.number().refine(
+    (cep) => {
+      const cepString = cep.toString();
+      return cepString.length === 8 && !isNaN(cep);
+    },
+    {
+      message: "CEP deve ter exatamente 8 dígitos!",
+    }
+  ),
+  fifthCep: zod.number().refine(
+    (cep) => {
+      const cepString = cep.toString();
+      return cepString.length === 8 && !isNaN(cep);
+    },
+    {
+      message: "CEP deve ter exatamente 8 dígitos!",
+    }
+  ),
 });
 
 type SearchCepFormData = zod.infer<typeof searchCepFormValidationSchema>;
@@ -57,7 +97,13 @@ const SearchCep = () => {
   const thirdCep = watch("thirdCep");
   const fourthCep = watch("fourthCep");
   const fifthCep = watch("fifthCep");
-  const isSubmitDisabled = false;
+  const isSubmitDisabled = !(
+    firstCep &&
+    secondCep &&
+    thirdCep &&
+    fourthCep &&
+    fifthCep
+  );
 
   const handleSearchAddress = async () => {
     Promise.all([
