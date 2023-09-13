@@ -9,7 +9,7 @@ const Home = () => {
         <Styles.List>
           <li>
             <ServiceItem
-              url={"/services/"}
+              url={"/services/cep"}
               title="Consultar CEP"
               description="Obtenha informações sobre determinado CEP"
               Icon={<MapPin />}
