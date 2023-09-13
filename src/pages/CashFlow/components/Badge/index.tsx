@@ -9,7 +9,7 @@ interface BadgeProps {
 const Badge = ({ title, value }: BadgeProps) => {
   return (
     <Styles.Container>
-      <Banknote size={48} />
+      <Banknote size={32} />
 
       <Styles.Content>
         <Styles.Title>{title}</Styles.Title>
