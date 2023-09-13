@@ -37,7 +37,7 @@ Antes de executar a aplicação (caso queira criar sua própria versão), atente
 
 ## Executando o Projeto
 
-Para acessar o projeto (pela vercel), basta clicar <a target="_blank" href="https://frontend-teste-nine.vercel.app/">aqui</a>.
+Para acessar o projeto (pela vercel), basta clicar <a target="_blank" href="https://frontend-teste-nine.vercel.app/">aqui</a>.<br>
 Para acessar o projeto (pela netlify), basta clicar <a target="_blank" href="https://cool-alpaca-fac15e.netlify.app/">aqui</a>.
 
 Agora, caso queira executar localmente, siga estas etapas:
