@@ -1,27 +1,88 @@
-# React + TypeScript + Vite
+# FRONT END
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+Front End construído com React (utilizando o Vite), além de outras tecnologias e ferramentas.
 
-Currently, two official plugins are available:
+## Tecnologias utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<ul>
+  <li>React</li>
+  <li>Typescript</li>
+  <li>Styled Components</li>
+  <li>React Hook Form</li>
+  <li>Axios</li>
+  <li>entre outras...</li>
+</ul>
 
-## Expanding the ESLint configuration
+<br>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+<ul>
+  <li>Consultar CEP;</li>
+  <li>Calcular troco;</li>
+  <li>Listar números palíndromos dentro de um intervalo;</li>
+  <li>Cadastrar veículos;</li>
+  <li>entre outras...</li>
+</ul>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+<br>
+
+## Pré-requisitos
+
+Antes de executar a aplicação (caso queira criar sua própria versão), atente-se aos requisitos:
+* Ter instalada a versão mais recente do `<Node.js e Yarn>`
+
+<br>
+
+## Executando o Projeto
+
+Para acessar o projeto, basta clicar <a target="_blank" href="https://frontend-teste-nine.vercel.app/">aqui</a>.
+
+Agora, caso queira executar localmente, siga estas etapas:
+
+1. Instale os pacotes<br>
+```
+>> yarn
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ou <br>
+
+```
+>> npm install
+```
+<br>
+2. Agora, é só executar os comandos:<br><br>
+
+Para rodar a aplicação:
+```
+>> yarn dev
+```
+
+ou <br>
+
+```
+>> npm run dev
+```
+
+Pronto!
+
+## PREVIEW
+
+<img src="assets/preview1.png" alt="Página inicial">
+<br /><br />
+
+<img src="assets/preview2.png" alt="Página de consultar CEP">
+<br /><br />
+
+<img src="assets/preview3.png" alt="Listagem do troco e cédulas">
+<br />
+
+<img src="assets/preview4.png" alt="Listagem de palíndromos entre 1 e 500">
+<br /><br />
+
+<img src="assets/preview5.png" alt="Página de cadastro de carro">
+<br /><br />
+
+<img src="assets/preview6.png" alt="Página de cadastro de moto">
+<br /><br />
