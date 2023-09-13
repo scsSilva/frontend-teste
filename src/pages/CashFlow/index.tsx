@@ -61,7 +61,7 @@ const CashFlow = () => {
               <Badge title="Valor da compra" value={change.price} />
             </li>
             <li>
-              <Badge title="Troco" value={change.amountReceived} />
+              <Badge title="Troco" value={change.amountReceived - change.price} />
             </li>
             <li>
               <Badge title="Notas de 100" value={change.hundredNotes} />
