@@ -9,46 +9,46 @@ import Button from "../../components/Button";
 import BadgeCep from "./components/BadgeCep";
 
 const searchCepFormValidationSchema = zod.object({
-  firstCep: zod.number().refine(
+  firstCep: zod.string().refine(
     (cep) => {
       const cepString = cep.toString();
-      return cepString.length === 8 && !isNaN(cep);
+      return cepString.length === 8 && !isNaN(parseInt(cepString));
     },
     {
       message: "CEP deve ter exatamente 8 dígitos!",
     }
   ),
-  secondCep: zod.number().refine(
+  secondCep: zod.string().refine(
     (cep) => {
       const cepString = cep.toString();
-      return cepString.length === 8 && !isNaN(cep);
+      return cepString.length === 8 && !isNaN(parseInt(cepString));
     },
     {
       message: "CEP deve ter exatamente 8 dígitos!",
     }
   ),
-  thirdCep: zod.number().refine(
+  thirdCep: zod.string().refine(
     (cep) => {
       const cepString = cep.toString();
-      return cepString.length === 8 && !isNaN(cep);
+      return cepString.length === 8 && !isNaN(parseInt(cepString));
     },
     {
       message: "CEP deve ter exatamente 8 dígitos!",
     }
   ),
-  fourthCep: zod.number().refine(
+  fourthCep: zod.string().refine(
     (cep) => {
       const cepString = cep.toString();
-      return cepString.length === 8 && !isNaN(cep);
+      return cepString.length === 8 && !isNaN(parseInt(cepString));
     },
     {
       message: "CEP deve ter exatamente 8 dígitos!",
     }
   ),
-  fifthCep: zod.number().refine(
+  fifthCep: zod.string().refine(
     (cep) => {
       const cepString = cep.toString();
-      return cepString.length === 8 && !isNaN(cep);
+      return cepString.length === 8 && !isNaN(parseInt(cepString));
     },
     {
       message: "CEP deve ter exatamente 8 dígitos!",
@@ -151,41 +151,31 @@ const SearchCep = () => {
           <FormProvider {...searchCepForm}>
             <Input
               placeholder="Primeiro CEP (apenas números)"
-              type="number"
-              step={1}
-              {...register("firstCep", { valueAsNumber: true })}
+              {...register("firstCep")}
             />
             <span>{errors.firstCep?.message}</span>
 
             <Input
               placeholder="Segundo CEP (apenas números)"
-              type="number"
-              step={1}
-              {...register("secondCep", { valueAsNumber: true })}
+              {...register("secondCep")}
             />
             <span>{errors.secondCep?.message}</span>
 
             <Input
               placeholder="Terceiro CEP (apenas números)"
-              type="number"
-              step={1}
-              {...register("thirdCep", { valueAsNumber: true })}
+              {...register("thirdCep")}
             />
             <span>{errors.thirdCep?.message}</span>
 
             <Input
               placeholder="Quarto CEP (apenas números)"
-              type="number"
-              step={1}
-              {...register("fourthCep", { valueAsNumber: true })}
+              {...register("fourthCep")}
             />
             <span>{errors.fourthCep?.message}</span>
 
             <Input
               placeholder="Quinto CEP (apenas números)"
-              type="number"
-              step={1}
-              {...register("fifthCep", { valueAsNumber: true })}
+              {...register("fifthCep")}
             />
             <span>{errors.fifthCep?.message}</span>
 
