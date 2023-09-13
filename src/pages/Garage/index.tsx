@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ActionMeta } from "react-select";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
@@ -90,6 +91,12 @@ const Garage = () => {
     reset();
   };
 
+  const handleChange = (newValue: any, actionMeta: ActionMeta<any>) => {
+    if (actionMeta.action === "select-option") {
+      setType(newValue?.value);
+    }
+  };
+
   return (
     <Styles.Container>
       <Styles.Title>Cadastrar veículo</Styles.Title>
@@ -102,7 +109,7 @@ const Garage = () => {
               { value: "MOTO", label: "Moto" },
             ]}
             defaultValue={{ value: "CARRO", label: "Carro" }}
-            onChange={(option) => setType(option?.value as "CARRO" | "MOTO")}
+            onChange={handleChange}
           />
           <Input
             placeholder="Informe o modelo"
