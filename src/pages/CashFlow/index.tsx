@@ -58,6 +58,12 @@ const CashFlow = () => {
         <Styles.ContentData>
           <Styles.ListData>
             <li>
+              <Badge title="Valor da compra" value={change.price} />
+            </li>
+            <li>
+              <Badge title="Troco" value={change.amountReceived} />
+            </li>
+            <li>
               <Badge title="Notas de 100" value={change.hundredNotes} />
             </li>
             <li>
